@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .f {
+            color: black;
+        }
+        .r{
+            color: whitesmoke;
+        }
+    </style>
+   
+    <title>Prediction </title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+</head>
+
+<nav class="navbar navbar-dark bg-dark navbar-fixed-top">
+    <a class="navbar-brand" href="/">Stroke Risk Prediction</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/result/">Prediction</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about/">About</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<body>
+
+    <div class="container-fluid bg-light">
+        <div class="col-lg-12">
+            <form action="{{ url_for('result') }}" method="post">
+                <br>
+                <br>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <label class=f for="gender">Gender</label>
+                        </div>
+                        <div class="col-lg-8 col-md-8">
+                            <input type="text" class="form-control" id="gender" name="gender"
+                                placeholder="Enter your Gender (Type 0 for Female, 1 for Male)">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <label class=f for="age">Age</label>
+                        </div>
+                        <div class="col-lg-8 col-md-8">
+                            <input type="text" class="form-control" id="age" name="age" placeholder="Enter your Age">
+
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <label class=f for="hypertension">Do you have Hypertension? </label>
+                        </div>
+                        <div class="col-lg-8 col-md-8">
+                            <input type="text" class="form-control" id="hypertension" name="hypertension"
+                                placeholder="Type 1 for Yes, 0 for No">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <label class=f for="heart_disease">Do you have heart_disease? </label>
+                        </div>
+                        <div class="col-lg-8 col-md-8">
+                            <input type="text" class="form-control" id="heart_disease" name="heart_disease"
+                                placeholder="Type 1 for Yes, 0 for No">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <label class=f for="ever_married">What is Martial Status?</label>
+                        </div>
+                        <div class="col-lg-8 col-md-8">
+                            <input type="text" class="form-control" id="ever_married" name="ever_married"
+                                placeholder="Type 1 for Yes, 0 for No">
+
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <label class=f for="work_type">Enter your work sector </label>
+                        </div>
+                        <div class="col-lg-8 col-md-8">
+                            <input type="text" class="form-control" id="work_type" name="work_type"
+                                placeholder="Type 0 for Govt. Job, 1 for Never_worked, 2 for Private, 3 for Self-employed, 4 for children">
+
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <label class=f for="Residence_type">Enter your Residence Type</label>
+                        </div>
+                        <div class="col-lg-8 col-md-8">
+                            <input type="text" class="form-control" id="Residence_type" name="Residence_type"
+                                placeholder="Type 1 for Urban, 0 for Rural">
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <label class=f for="avg_glucose_level">Glucose Level</label>
+                        </div>
+                        <div class="col-lg-8 col-md-8">
+                            <input type="text" class="form-control" id="avg_glucose_level" name="avg_glucose_level"
+                                placeholder="Enter your Glucose Level">
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <label class=f for="bmi">Body Mass Index (BMI)</label>
+                        </div>
+                        <div class="col-lg-8 col-md-8">
+                            <input type="text" class="form-control" id="bmi" name="bmi"
+                                placeholder="Enter your Body Mass Index">
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <label class=f for="smoking_status">Do you smoke?</label>
+                        </div>
+                        <div class="col-lg-8 col-md-8">
+                            <input type="text" class="form-control" id="smoking_status" name="smoking_status"
+                                placeholder="0 for Unknown, 1 for formerly smoked, 2 for never smoked, 3 for smokes">
+                        </div>
+                    </div>
+                    <br>
+
+                    <br>
+                    <br>
+                    <center>
+                        <button type="submit" class="btn btn-dark" value="submit" name="submit">Submit</button>
+                    </center>
+            </form>
+    
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+   
+</body>
+<!-- <style>
+    body {
+        background-color: white;
+    }
+
+    .col-lg-4 {
+        color: black;
+    }
+   
+</style> -->
+
+<footer>
+    <div  class="bg-dark r text-center">
+        <p>Copyright &copy; - Team B-10 Dept. of CSE NIE Mysuru-570008 </p>
+    </div>
+</footer>
+
+</html>

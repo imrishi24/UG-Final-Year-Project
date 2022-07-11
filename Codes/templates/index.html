@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+   <style>
+        /* body{
+            
+            color: black;
+        } */
+        .col-lg-4 {
+            color: black;
+        }
+
+        .r {
+            color: whitesmoke;
+            bottom: 0;
+        }
+        html, body 
+    {padding:0; margin:0; height:100%;}
+    footer
+    {position: absolute; 
+    bottom: 0; left: 0; right: 0;
+    padding-bottom: 0%;}
+
+    body {
+    font-family: 'Brush Script MT', cursive;
+    background-image: url("/static/1.jpg");
+    background-size: 100vw 100vh;
+    /* font-family: 'Courier New', monospace; */
+}
+h1 {
+    display: flex;
+    position: relative;
+    color: rgba(0, 0, 0, .3);
+    font-size: 5em;
+    justify-content: center;
+    align-items: center;
+}
+#yyy{
+    font-size: 35px;
+    color: black;
+}
+
+
+
+    </style>
+    <title>Home</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+</head>
+
+
+<body>
+    <nav class="navbar navbar-dark bg-dark navbar-fixed-top">
+        <a class="navbar-brand" href="/">Stroke Risk Prediction</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/result/">Prediction</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about/">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <h1 id="yyy"></h1>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+        <script>
+            var a = "When blood flow to specific sections of the brain is interrupted or reduced, the cells in those areas are deprived of nutrients and oxygen, and they begin to die. A stroke is a medical emergency that necessitates quick medical attention. To avoid further damage to the affected area of the brain and potential complications in other body parts, early detection and adequate therapy are necessary. According to the World Health Organization (WHO), fifteen million people worldwide suffer from stroke every year, with one person dying every 4-5 minutes.";
+            let mid = document.getElementById("yyy");
+            let i=0;
+            setInterval(function(){
+              if(i<a.length){
+                mid.append(a[i])
+                i++;
+              }
+            },50)
+
+        </script>
+</body>
+
+<footer>
+    <div class="bg-dark r text-center">
+        <p>Copyright &copy; - Team B-10 Dept. of CSE NIE Mysuru-570008 </p>
+
+    </div>
+</footer>
+
+
+</html>
